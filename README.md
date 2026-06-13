@@ -125,10 +125,9 @@ Response Returned
 ML-Loan-Approval-System/
 │
 ├── main.py
-├── schemas.py
-├── loan_model.pkl
+├── model.py
+├── loan_prediction.pkl
 ├── columns.pkl
-├── requirements.txt
 ├── README.md
 └── .gitignore
 ```
@@ -147,12 +146,6 @@ Move into the project directory:
 
 ```bash
 cd ML-Loan-Approval-System
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
 ```
 
 Run the application:
