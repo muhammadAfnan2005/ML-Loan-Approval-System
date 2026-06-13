@@ -1,6 +1,12 @@
-# LoanWise-ML-API
+# ML-Loan-Approval-System
 
-An end-to-end Machine Learning application that predicts whether a loan application should be approved or rejected using a Random Forest Classifier. The model is deployed using FastAPI and provides real-time predictions through an interactive Swagger interface.
+An end-to-end Machine Learning application that predicts whether a loan application should be approved or rejected using a Random Forest Classifier. The trained model is deployed using FastAPI and supports real-time predictions through an interactive Swagger interface.
+
+## Overview
+
+This project demonstrates the complete Machine Learning lifecycle, from data preprocessing and model training to API deployment.
+
+The system accepts applicant information, applies the same preprocessing used during training, and predicts whether the loan should be approved.
 
 ---
 
@@ -9,16 +15,16 @@ An end-to-end Machine Learning application that predicts whether a loan applicat
 - Loan approval prediction using Machine Learning
 - Random Forest Classifier
 - FastAPI deployment
-- Interactive Swagger UI
-- Form-based input support
+- Interactive Swagger documentation
+- Form-based user input through Swagger UI
 - One-Hot Encoding using Pandas
 - Model persistence using Joblib
-- Input validation with FastAPI
-- Ready for deployment
+- Automatic request validation
+- Real-time predictions
 
 ---
 
-## Tech Stack
+## Technologies Used
 
 ### Machine Learning
 - Python
@@ -26,19 +32,19 @@ An end-to-end Machine Learning application that predicts whether a loan applicat
 - Pandas
 - NumPy
 
-### Deployment
+### API Development
 - FastAPI
 - Uvicorn
-- Joblib
+- Pydantic
 
-### Documentation
-- Swagger UI (FastAPI Docs)
+### Model Persistence
+- Joblib
 
 ---
 
 ## Dataset
 
-This project uses the Loan Prediction dataset containing applicant information such as:
+The project uses a Loan Prediction dataset containing applicant information such as:
 
 - Gender
 - Marital Status
@@ -52,11 +58,12 @@ This project uses the Loan Prediction dataset containing applicant information s
 - Credit History
 - Property Area
 
-Target Variable:
+### Target Variable
 
-- Loan Status
-    - Approved
-    - Rejected
+Loan Status:
+
+- Approved
+- Rejected
 
 ---
 
@@ -77,7 +84,7 @@ Target Variable:
 
 ## Model Evaluation
 
-The following metrics were used to evaluate the models:
+The following metrics were used:
 
 - Accuracy
 - Confusion Matrix
@@ -86,27 +93,45 @@ The following metrics were used to evaluate the models:
 - F1-Score
 - Classification Report
 
-Random Forest was selected as the final model due to its superior performance.
+After comparison, Random Forest was selected as the final model.
 
 ---
 
 ## API Workflow
 
+```
 User Input
-↓
-FastAPI Forms / Swagger UI
-↓
+    ↓
+Swagger Form Interface
+    ↓
+FastAPI
+    ↓
 DataFrame Conversion
-↓
+    ↓
 One-Hot Encoding
-↓
+    ↓
 Column Alignment
-↓
-Random Forest Model
-↓
-Prediction
-↓
-JSON Response
+    ↓
+Random Forest Prediction
+    ↓
+Response Returned
+```
+
+---
+
+## Project Structure
+
+```
+ML-Loan-Approval-System/
+│
+├── main.py
+├── schemas.py
+├── loan_model.pkl
+├── columns.pkl
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
 
 ---
 
@@ -115,13 +140,13 @@ JSON Response
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/LoanWise-ML-API.git
+git clone https://github.com/YOUR_USERNAME/ML-Loan-Approval-System.git
 ```
 
 Move into the project directory:
 
 ```bash
-cd LoanWise-ML-API
+cd ML-Loan-Approval-System
 ```
 
 Install dependencies:
@@ -140,7 +165,7 @@ uvicorn main:app --reload
 
 ## API Documentation
 
-After running the application, visit:
+After starting the server, open:
 
 ```
 http://127.0.0.1:8000/docs
@@ -162,7 +187,7 @@ FastAPI automatically generates interactive API documentation using Swagger UI.
 
 ## Future Improvements
 
-- Probability-based predictions
+- Prediction probabilities
 - Database logging using SQLAlchemy
 - Docker support
 - Cloud deployment
@@ -172,36 +197,22 @@ FastAPI automatically generates interactive API documentation using Swagger UI.
 
 ---
 
-## Project Structure
+## What I Learned
 
-```
-LoanWise-ML-API/
-│
-├── main.py
-├── schemas.py
-├── loan_model.pkl
-├── columns.pkl
-├── requirements.txt
-└── README.md
-```
+This project helped me gain practical experience in:
 
----
-
-## Learning Outcomes
-
-Through this project, I gained hands-on experience with:
-
-- Building Machine Learning models
+- Building classification models
 - Comparing Decision Trees and Random Forests
-- Evaluating classification models
-- Deploying ML models with FastAPI
-- Handling real-world preprocessing challenges
-- Designing production-oriented prediction APIs
+- Evaluating machine learning models
+- Handling preprocessing during deployment
+- Deploying models using FastAPI
+- Creating production-style prediction APIs
 
 ---
 
 ## Author
 
-Muhammad Afnan
+**Muhammad Afnan**
 
-BS Computer Science Student | Aspiring Data Scientist & AI Engineer
+BS Computer Science Student  
+Aspiring Data Scientist and AI Engineer
